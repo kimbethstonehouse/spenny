@@ -32,20 +32,3 @@ class NumbeoSpider(scrapy.Spider):
                     'lowRange': listLowRanges[i],
                     'highRange': listHighRanges[i],
                 }
-
-#        for item in response.xpath('//table/tr[th/text()="Restaurants"]/../tr'):
-#            yield {
-#                'text': item.getall().xpath('//td[text()!="\n"]/text()').getall(),
-#                'lowRange': item.xpath('//span[@class="barTextLeft"]/text()').getall(),
-#                'highRange': item.xpath('//span[@class="barTextRight"]/text()').getall(),
-#            }
-
-
-        
-
- #page = response.url.split("/")[-2]
- #filename = 'numbeo-%s.html' % page
- #with open(filename, 'wb') as f:
- #    f.write(response.body)
- #self.log('Saved file %s' % filename)
- 

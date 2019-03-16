@@ -10,5 +10,9 @@ class main:
         self.dir = dir
 
         with open(dir, "r") as all:
-            file = all.read()
+            file = all.read().split("\n")
+
+            for line in file:
+                
+            
 

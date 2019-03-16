@@ -1,4 +1,4 @@
 # htb2019
 
 ## Diversity lads
-lads
+lads g a n g

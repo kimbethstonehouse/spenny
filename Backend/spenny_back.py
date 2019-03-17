@@ -9,26 +9,29 @@ def spenny_back(region, salary, spendingPattern, drinks, smokes, rent, numAdults
     # calculate income decile from salary
     weeklySalary = salary / 52.0
 
-    if weeklySalary<216:
+    if weeklySalary >= 0 and weeklySalary < 216:
         decile = 1
-    if weeklySalary<322:
+    elif weeklySalary >= 216 and weeklySalary < 322:
         decile = 2
-    if weeklySalary<432:
+    elif weeklySalary >= 322 and weeklySalary < 432:
         decile = 3
-    if weeklySalary<548:
+    elif weeklySalary >= 432 and weeklySalary < 548:
         decile = 4
-    if weeklySalary<681:
+    elif weeklySalary >= 548 and weeklySalary < 681:
         decile = 5
-    if weeklySalary<812:
+    elif weeklySalary >= 681 and weeklySalary < 812:
         decile = 6
-    if weeklySalary<986:
+    elif weeklySalary >= 812 and weeklySalary < 986:
         decile = 7
-    if weeklySalary<1252:
+    elif weeklySalary >= 986 and weeklySalary < 1252:
         decile = 8
-    if weeklySalary<1713:
+    elif weeklySalary >= 1252 and weeklySalary < 1713:
         decile = 9
     else: 
-        return 10
+        decile = 10
+
+    print(weeklySalary)
+    print(decile)
     
     # maps region or decile to the corresponding file line number
     regionKeys = {"United Kingdom":0, "England":1, "North East":2, "North West":3,

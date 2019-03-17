@@ -21,8 +21,8 @@ def main():
     # parameters I am expecting from Moseph
     # set these when user input is sorted !!!!!!!
     region = "Scotland"
-    salary = 16000                 # calculate decile with this
-    spendingPattern = "Frugal"
+    salary = 30000                 # calculate decile with this
+    spendingPattern = "Spenny"
     drinks = False
     smokes = False
     rent = 500

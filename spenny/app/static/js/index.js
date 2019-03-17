@@ -307,6 +307,35 @@ $('.next-button.email').click(
 );
 
 //
+// EMAIL INIT JQUERY
+//
+
+$('.email-init').on("change keyup paste",
+  function(){
+    if($(this).val()){
+      $('.icon-email').addClass("next");
+    } else {
+      $('.icon-email').removeClass("next");
+    }
+  }
+);
+
+$('.next-button').hover(
+  function(){
+    $(this).css('cursor', 'pointer');
+  }
+);
+
+$('.next-button.email-init').click(
+  function(){
+    console.log("Something");
+    $('.email-section-init').addClass("fold-up");
+    $('.password-section').removeClass("folded");
+  }
+);
+
+
+//
 // PASSWORD JQUERY
 //
 
@@ -328,3 +357,5 @@ $('.next-button.password').click(
     $('.success').css("marginTop", 0);
   }
 );
+
+

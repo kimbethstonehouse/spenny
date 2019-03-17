@@ -15,19 +15,14 @@ from flask import render_template, flash, redirect
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
-        next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
-        return redirect(next_page)
+        else:
+            return render_template('dashboard.html', title='Dashboard', user=form.username.data)
     return render_template('login.html', title='Sign In', form=form)
 
 
@@ -53,15 +48,27 @@ def register():
                        smoker=form.smoker.data, drinker=form.drinker.data)
         db.session.add(newUser)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
 
     return render_template('register.html', title='Register', form=form)
     
 
-@app.route('/dashboard')
-@login_required
-def dashboard():
-    return render_template('index.html', title='Welcome')
+@app.route('/dashboard/')
+def dashboard(user):
+    userTemp = User.query.filter_by(email=form.username.data).first()
+    region = userTemp.location
+    salary = userTemp.income
+    spendingPattern = "Moderate"
+    drinks = bool(userTemp.drinker)
+    smokes = bool(userTemp.smoker)
+    rent = userTemp.accomcost
+    numAdults = userTemp.adultdependents
+    numChildren = userTemp.childdependents
+    yearsToSave = 0
+    initalAssets = 0
+    amountToSave = 0
+    
+    return render_template('dashboard.html', title='Welcome', user=user)
+
 
 

@@ -9,6 +9,7 @@ header a, header a:visited, header a:hover {
     text-decoration: none;
 }
 
+
 h3 {
     color: #4681a3;
     font-family: 'Roboto', sans-serif;
@@ -34,10 +35,24 @@ h3 {
 }
 
 h4 {
-    color: #FFFFFF;
+    color: #4681a3;
     font-family: 'Dosis', sans-serif;
     font-size: 12pt;
     letter-spacing: 2px;
+
+}
+h2 {
+  color: #4681a3;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30pt;
+  letter-spacing: 3px;
+
+}
+
+#submit {
+  background-color: #4681a3;
+  border: 1px solid #4681a3;
+  color: white;
 
 }
 
@@ -57,7 +72,6 @@ img {
 
 header {
     padding-bottom: 20px;
-    border: 1px solid;
     position:relative;
     z-index:10
 }
@@ -70,6 +84,17 @@ header {
             transform: translate(-50%, 0%);
     top: 40%;
     background: transparent;
+  }
+
+  .registration-form-non-transparent {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    top: 40%;
+    background: white;
+    border-radius: 10px;
   }
 
   .registration-form header {
@@ -291,5 +316,10 @@ footer a, footer a:hover, footer a:visited {
     margin-top: 10px;
     width: 100%;
     text-align: center;
+  }
+
+  button {
+    border: none;
+    color: white;
   }
   

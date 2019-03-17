@@ -3,6 +3,8 @@ from calculate_budget import calculate_budget
 from piechart import piechart
 from savings_function import savings_function
 
+
+
 def spenny_back(region, salary, spendingPattern, drinks, smokes, rent, numAdults, 
                     numChildren, yearsToSave, initialAssets, amountToSave):
     
@@ -106,3 +108,7 @@ def spenny_back(region, salary, spendingPattern, drinks, smokes, rent, numAdults
         totalWeeklyBudget += value
 
     return budgetAverage
+
+
+x = spenny_back("Scotland", 15000, "Moderate", True, False, 500, 1, 0, 0, 0, 0)
+print(x)

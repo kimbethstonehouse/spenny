@@ -21,9 +21,6 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return self.password == password
 
-    def get_region(self):
-        return self.region
-
 
     def __init__(self, name=None, birthdate=None, email=None, password=None, location = None, occupation = None, income = None, accomcost = None, adultdependents = None, childdependents = None, smoker = None, drinker = None):
         self.name = name

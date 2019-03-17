@@ -17,6 +17,7 @@ def savings_function(t, goal, assets):
     for t in range (0,t+1):
         assets += assets*(np.polyval(p4, t+2019))
     amount_to_save = (goal - assets)/(52*t)
+    amount_to_save = 5 * round(amount_to_save / 5)
     return amount_to_save
 
 #print(savings_function(4, 2400, 1000))

@@ -7,7 +7,7 @@ def spenny_back(region, salary, spendingPattern, drinks, smokes, rent, numAdults
                     numChildren, yearsToSave, initialAssets, amountToSave):
     
     # calculate income decile from salary
-    weeklySalary = salary/52
+    weeklySalary = salary / 52.0
 
     if weeklySalary<216:
         decile = 1
@@ -35,24 +35,24 @@ def spenny_back(region, salary, spendingPattern, drinks, smokes, rent, numAdults
     "Yorkshire and The Humber":4, "East Midlands":5, "West Midlands":6, "East":7, "London":8, "South East":9,
     "South West":10, "Wales":11, "Scotland":12, "Northern Ireland":13}
 
-    decileKeys = {"All":0, "Lowest":1, "Second":2, "Third":3, "Fourth":4,
-    "Fifth":5, "Sixth":6, "Seventh":7, "Eighth":8, "Ninth":9, "Highest":10}
+    #decileKeys = {"All":0, "Lowest":1, "Second":2, "Third":3, "Fourth":4,
+    #"Fifth":5, "Sixth":6, "Seventh":7, "Eighth":8, "Ninth":9, "Highest":10}
 
     # fetch file line numbers
     regionKey = regionKeys.get(region)
-    decileKey = decileKeys.get(decile)
+    #decileKey = decileKeys.get(decile)
 
     # adjust to a different decile depending on spending pattern
     # assumption that lowest and highest deciles can't go lower or higher
     # moderate doesn't change the decile
-    if spendingPattern == "Frugal" and decileKey != 1 and decileKey != 0:
-        decileKey -= 1
-    elif spendingPattern == "Spenny" and decileKey != 10:
-        decileKey += 1
+    if spendingPattern == "Frugal" and decile != 1 and decile != 0:
+        decile -= 1
+    elif spendingPattern == "Spenny" and decile != 10:
+        decile += 1
 
     # calculate a budget estimate for each parameter
-    budgetRegion = calculate_budget(region, regionKey, "regions.txt")
-    budgetDecile = calculate_budget(decile, decileKey, "deciles.txt")
+    budgetRegion = calculate_budget(regionKey, "regions.txt")
+    budgetDecile = calculate_budget(decile, "deciles.txt")
 
     # find the variances of the income and region data to
     # deduce how much each factor influences expenditure

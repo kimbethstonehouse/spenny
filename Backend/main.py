@@ -21,7 +21,7 @@ def main():
     # parameters I am expecting from Moseph
     # set these when user input is sorted !!!!!!!
     region = "Scotland"
-    salary = 16,000                 # calculate decile with this
+    salary = 16000                 # calculate decile with this
     spendingPattern = "Frugal"
     drinks = False
     smokes = False
@@ -42,7 +42,13 @@ def main():
     for value in budgetAverage.values():
         totalWeeklyBudget += value
 
+
+    print(budgetAverage)
+    print(totalWeeklyBudget)
+
     piechart(budgetAverage)
+
+    print(budgetAverage)
 
 if __name__ == "__main__":
     main()

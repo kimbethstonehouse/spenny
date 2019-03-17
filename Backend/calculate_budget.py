@@ -1,5 +1,5 @@
 # reads part of file corresponding to parameter into dictionary
-def calculate_budget(parameter, parameterKey, dir):
+def calculate_budget(parameterKey, dir):
     budget = dict()
 
     with open(dir, "r") as all:

@@ -1,9 +1,10 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, session
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegisterForm
 from app.models import User
+
 
 
 @app.route('/')
@@ -22,13 +23,16 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         else:
-            return render_template('dashboard.html', title='Dashboard', user=form.username.data)
+            session['username'] = form.username.data
+            return redirect(url_for('dashboard'))
     return render_template('login.html', title='Sign In', form=form)
 
 
 @app.route('/logout')
 def logout():
     logout_user()
+    del session['username']
+
     return redirect(url_for('index'))
 
 
@@ -54,8 +58,9 @@ def register():
     
 
 @app.route('/dashboard/')
-def dashboard(user):
-    userTemp = User.query.filter_by(email=form.username.data).first()
+def dashboard():
+    
+    userTemp = User.query.filter_by(email=session['username']).first()
     region = userTemp.location
     salary = userTemp.income
     spendingPattern = "Moderate"
@@ -67,8 +72,7 @@ def dashboard(user):
     yearsToSave = 0
     initalAssets = 0
     amountToSave = 0
-    
-    return render_template('dashboard.html', title='Welcome', user=user)
+    return render_template('dashboard.html', title='Welcome', user=userTemp)
 
 
 

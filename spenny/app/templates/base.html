@@ -22,17 +22,17 @@
                 <a href="{{ url_for('index') }}"><img src="/static/img/logo_square_color.png" ></a>
                 <a href="{{ url_for('index') }}"><h3>Spenny</h3></a>            
             </div>
-
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
         </header>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+
         {% block content %}{% endblock %}
         
     </body>

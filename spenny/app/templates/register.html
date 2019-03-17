@@ -8,7 +8,7 @@
             <h1>Register</h1>
             <p>Please Fill in your Information</p>    
     </header>
-    <form>
+    <form method="POST">
             <div class="input-section name-section">
                 {{ form.name(class_="name", placeholder="Full Name", autocomplete="off") }}
                 <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-user"></i></span><span class="next-button name"><i class="fa fa-arrow-up"></i></span></div>
@@ -58,7 +58,7 @@
                     <div class="animated-button"><span class="icon-lock"><i class="fa fa-lock"></i></span><span class="next-button password"><i class="fa fa-paper-plane"></i></span></div>
             </div>
             <div class="success"> 
-              <p>Please Wait</p>
+                    <button type="submit">           
             </div>
           </form>
         </div>
@@ -69,23 +69,6 @@
         <script  src="/static/js/index.js"></script>
         
 
-      
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email() }}<br>
-            {% for error in form.email.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password() }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
 
 </div>
 {% endblock %}

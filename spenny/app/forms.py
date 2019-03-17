@@ -1,13 +1,12 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
 from wtforms.fields.html5 import DateField
-from wtforms.validators import DataRequired, EqualTo
-
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from app.models import User
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
 class RegisterForm(FlaskForm):
@@ -26,6 +25,6 @@ class RegisterForm(FlaskForm):
     accomcost = StringField('Rent/Mortgage Costs', validators=[DataRequired()])
     adultdependents = StringField('Household Adults', validators=[DataRequired()])
     childdependents = StringField('Household Children', validators=[DataRequired()])
-    smoker = SelectField('Are you a Smoker?', choices=[('YES', 'Smoker'), ('NO', 'Non-Smoker')]) 
-    drinker = SelectField('Do you drink Alcohol?', choices=[('YES', 'Drink Alcohol'), ('NO', 'Don\'t Drink')]) 
+    smoker = SelectField('Are you a Smoker?', choices=[('NEUTRAL', 'Do you smoke?'), ('YES', 'Yes, I smoke.'), ('NO', 'Non-Smoker')]) 
+    drinker = SelectField('Do you drink Alcohol?', choices=[('NEUTRAL', 'Do you drink alcohol?'), ('YES', 'Yes'), ('NO', 'Don\'t Drink')]) 
     submit = SubmitField('Register')    

@@ -1,4 +1,4 @@
-#!c:\users\anubh\downloads\htb\spenny\venv\scripts\python.exe
+#!c:\users\s1792767\desktop\htb2019\spenny\venv\scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'alembic==1.0.8','console_scripts','alembic'
 __requires__ = 'alembic==1.0.8'
 import re

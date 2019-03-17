@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\anubh\Downloads\HTB\spenny\venv"
+VIRTUAL_ENV="C:\Users\s1792767\Desktop\htb2019\spenny\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

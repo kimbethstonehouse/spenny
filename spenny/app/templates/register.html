@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="back"></div>
+<div class="main">
+    <div class = "registration-form">
+    <header>
+            <h1>Register</h1>
+            <p>Please Fill in your Information</p>    
+    </header>
+    <form>
+            <div class="input-section name-section">
+                {{ form.name(class_="name", placeholder="Full Name", autocomplete="off") }}
+                <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-user"></i></span><span class="next-button name"><i class="fa fa-arrow-up"></i></span></div>
+            </div>
+            <div class="input-section income-section folded">
+                {{ form.income(class_="income", placeholder="Year Income (after taxes, including benefits) in £", autocomplete="off") }}
+                <div class="animated-button"><span class="icon-money"><i class="fa fa-money"></i></span><span class="next-button income"><i class="fa fa-arrow-up"></i></span></div>
+            </div>
+            <div class="input-section dob-section folded">
+                {{ form.birthdate(class_="dob", placeholder="Date of Birth") }}
+                <div class="animated-button"><span class="icon-birth"><i class="fa fa-birthday-cake"></i></span><span class="next-button dob"><i class="fa fa-arrow-up"></i></span></div>
+            </div>  
+            <div class="input-section location-section folded">
+                    {{ form.location(class_="location", placeholder="Region in UK") }}
+                    <div class="animated-button"><span class="icon-location"><i class="fa fa-location-arrow"></i></span><span class="next-button location"><i class="fa fa-arrow-up"></i></span></div>
+            </div>  
+            <div class="input-section occupation-section folded">
+                    {{ form.occupation(class_="occupation", placeholder="Occupational Status") }}
+                    <div class="animated-button"><span class="icon-occupation"><i class="fa fa-briefcase"></i></span><span class="next-button occupation"><i class="fa fa-arrow-up"></i></span></div>
+            </div>  
+            <div class="input-section accomcost-section folded">
+                    {{ form.accomcost(class_="accomcost", placeholder="Monthly Accom. Costs (Mortgage or Rent)", autocomplete="off") }}
+                    <div class="animated-button"><span class="icon-accom"><i class="fa fa-home"></i></span><span class="next-button accomcost"><i class="fa fa-arrow-up"></i></span></div>
+            </div>  
+            <div class="input-section adultdep-section folded">
+                    {{ form.adultdependents(class_="adultdep", placeholder="Number of Adults in Household", autocomplete="off") }}
+                    <div class="animated-button"><span class="icon-adults"><i class="fa fa-street-view"></i></span><span class="next-button adultdep"><i class="fa fa-arrow-up"></i></span></div>
+            </div>        
+            <div class="input-section childdep-section folded">
+                    {{ form.childdependents(class_="childdep", placeholder="Number of Children in Household", autocomplete="off") }}
+                    <div class="animated-button"><span class="icon-children"><i class="fa fa-child"></i></span><span class="next-button childdep"><i class="fa fa-arrow-up"></i></span></div>
+            </div> 
+            <div class="input-section smoker-section folded">
+                    {{ form.smoker(class_="smoker", placeholder="Are you a Smoker?") }}
+                    <div class="animated-button"><span class="icon-smoke"><i class="fa fa-fire"></i></span><span class="next-button smoker"><i class="fa fa-arrow-up"></i></span></div>
+            </div>  
+            <div class="input-section drinker-section folded">
+                    {{ form.drinker(class_="drinker", placeholder="Are you a Smoker?") }}
+                    <div class="animated-button"><span class="icon-drink"><i class="fa fa-glass"></i></span><span class="next-button drinker"><i class="fa fa-arrow-up"></i></span></div>
+            </div> 
+            <div class="input-section email-section folded">
+                    {{ form.email(class_="email", placeholder="Email Address", autocomplete="off") }}
+                    <div class="animated-button"><span class="icon-email"><i class="fa fa-paper-plane"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+            </div>                
+            <div class="input-section password-section folded">
+                    {{ form.password(class_="password", placeholder="Password", autocomplete="off") }}              
+                    <div class="animated-button"><span class="icon-lock"><i class="fa fa-lock"></i></span><span class="next-button password"><i class="fa fa-paper-plane"></i></span></div>
+            </div>
+            <div class="success"> 
+              <p>Please Wait</p>
+            </div>
+          </form>
+        </div>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        
+          
+        
+        <script  src="/static/js/index.js"></script>
+        
+
+      
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email() }}<br>
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password() }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+</div>
+{% endblock %}

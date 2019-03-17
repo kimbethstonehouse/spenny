@@ -1,8 +1,41 @@
-{% extends "base.html" %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css')}}">
+        <link rel="stylesheet" href="/static/styles/skeleton.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png"/>
 
-{% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
-{% endblock %}
+        {% if title %}
+        <title>{{ title }} - Spenny</title>
+        {% else %}
+        <title>Spenny</title>
+        {% endif %}
+    </head>
+    <body>
+        <div class = "center">
+                <img src="/static/img/logo_square.png" >
+                <h1>Spenny</h1>
+                <h4>Fly to Financial Freedom</h4>
+                <br>
+                <div class="maintext">
+                <h5>What is Spenny?</h5>
+                <p>Spenny is an ambitious attempt to revolutionise personal financial budgeting, 
+                    which combines statistical techniques and macroeconomic data to contextualise 
+                    all of our decisions in the an economic climate.
+                </p>
+                <h5>How do we do this?</h5>
+                <p>We use various data sources of typical household spending and prices in the UK 
+                    for different regions and earnings levels to generate bespoke budgets for everyone that 
+                    pertain to their situation. Then, you can set savings goals that Spenny will help you work towards.
+                </p>
+                </div>
+                <br>
+                <a class="button" href="{{ url_for('login') }}">Login</a>
+                <a class="button" href="{{ url_for('register') }}">Register</a>
+                <footer>Made at <a href="https://2019.hacktheburgh.com/">HackTheBurgh 2019</a> by <a href="mailto:anubhav.chowdhury99@gmail.com">Anu Chowdhury</a>, <a href="https://github.com/kimbethstonehouse">Kim Stonehouse</a>, <a href="https://www.linkedin.com/in/lianaahmed/">Liana Ahmed</a>, and <a href="https://mojavad.com">Mo Javad</a>.</footer>
+
+        </div>            
+    </body>
+</html>

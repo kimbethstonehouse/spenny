@@ -1,4 +1,4 @@
-#!c:\users\anubh\downloads\htb\spenny\venv\scripts\python.exe
+#!c:\users\s1792767\desktop\htb2019\spenny\venv\scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'Mako==1.0.7','console_scripts','mako-render'
 __requires__ = 'Mako==1.0.7'
 import re

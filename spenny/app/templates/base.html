@@ -1,18 +1,29 @@
 <html>
     <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css')}}">
+        <link rel="stylesheet" href="/static/styles/skeleton.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/basestyle.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        
         {% if title %}
-        <title>{{ title }} - microblog</title>
+        <title>{{ title }} - Spenny</title>
         {% else %}
-        <title>microblog</title>
+        <title>Spenny</title>
         {% endif %}
     </head>
     <body>
-        <div>
-            Microblog:
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('login') }}">Login</a>
-        </div>
-        <hr>
+        <header>
+            <div class="logo">
+                <a href="{{ url_for('index') }}"><img src="/static/img/logo_square_color.png" ></a>
+                <a href="{{ url_for('index') }}"><h3>Spenny</h3></a>            
+            </div>
+
+        </header>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
@@ -23,5 +34,6 @@
         {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
+        
     </body>
 </html>

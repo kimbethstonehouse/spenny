@@ -1,4 +1,4 @@
-# htb2019
+# Spenny
 
 ## Inspiration
 Spenny is a budgeting software that looks to use statistical analysis and macroeconomic data to guide spending and saving decisions to help you control your future.

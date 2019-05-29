@@ -15,11 +15,11 @@ One source was an OECD database of real short term interest rates including a on
 A second source was ONS data of the Family Expenditure Survey for 2017-18. We examined expenditure habits across: income deciles (10% segments of society by dispoable household income) and different regions e.g. Northwest England or Greater London (tpeople living in different regions). We processed individuals’ data to give information about their budgets in terms of their expenditure on the most commonly-consumed 650 goods in the UK.
 
 ## Challenges we ran into
-# Time Constraints
+### Time Constraints
 
 We could have made use of Nexmo's API to allow full use improved accessibility features: such as audio input of information as well as output of budget details Add facilities to track payments Could implement Monzo’s API for logging of expenses Could also connect to a consumer’s banking services to do this in real time Adding more visualisation techniques for the budget eg more graphs Adding multiple savings goals at the same time, for named projects Adding multiple expenditure levels: “Frugal, Moderate, Spenny” affecting higher spending
 
-# Data Constraints
+### Data Constraints
 
 Access to Raw Data for FES Survey would allow inclusion of more complex budget factors: Current data accounts for approximately one representative individual but income could be “equivalised” to include the effects of multiple dependents and earners in a family on standard of life and, accordingly, budgeting.
 

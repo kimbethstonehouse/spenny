@@ -1,5 +1,9 @@
 # Spenny
 
+## Results
+
+This project won BlackRock's Best Financial Hack at Hack the Burgh V in March 2019.
+
 ## Inspiration
 Spenny is a budgeting software that looks to use statistical analysis and macroeconomic data to guide spending and saving decisions to help you control your future.
 
